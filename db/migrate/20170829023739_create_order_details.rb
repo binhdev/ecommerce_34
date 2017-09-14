@@ -5,7 +5,7 @@ class CreateOrderDetails < ActiveRecord::Migration[5.1]
       t.references :product, foreign_key: true
       t.integer :qty
       t.decimal :amount, default: 0
-      t.integer :status, default: Settings.default.order_detail.not_ready
+      t.integer :status, default: Settings.default.order_detail.pending
 
       t.timestamps
     end

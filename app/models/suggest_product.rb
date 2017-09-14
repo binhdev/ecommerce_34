@@ -3,8 +3,8 @@ class SuggestProduct < ApplicationRecord
   belongs_to :user
   belongs_to :catalog
 
-  enum status: {waiting: Settings.default.order.waiting,
-    finished: Settings.default.order.finished}
+  enum status: {waiting: Settings.default.suggest_product.waiting,
+    finished: Settings.default.suggest_product.finished}
 
   validates :name,  presence: true, length: {maximum: Settings.maximum.name}
   validates :price, presence: true, numericality: true

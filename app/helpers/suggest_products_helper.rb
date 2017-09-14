@@ -1,11 +1,11 @@
 module SuggestProductsHelper
-  def show_status suggest_product
+  def sp_show_status suggest_product
     st = t ".not_found"
     st = t ".waiting" if suggest_product.waiting?
     st = t ".finished" if suggest_product.finished?
     st
   end
-  def set_class suggest_product
+  def sp_set_class suggest_product
     style_class = "danger"
     style_class = "warning" if suggest_product.waiting?
     style_class = "success" if suggest_product.finished?

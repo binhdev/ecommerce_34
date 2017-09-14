@@ -1,0 +1,56 @@
+<h1><%= t ".title" %></h1>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= t ".catalog_chart" %></div>
+      <div class="panel-body">
+        <div id="canvas-holder" style="width:100%">
+          <canvas id="chart-products" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= t ".order_chart" %></div>
+      <div class="panel-body">
+        <div id="canvas-holder" style="width:100%">
+          <canvas id="chart-orders" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= t ".revenue_chart" %></div>
+      <div class="panel-body">
+        <div id="container" style="width: 75%;">
+        <canvas id="canvas"></canvas>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  cat_names = <%= raw @catChart.legend_catalog_chart %>;
+  cat_values = <%= @catChart.total_product_catalog_chart %>;
+
+  var ctx = document.getElementById("chart-products").getContext("2d");
+  generatePieChart(ctx, cat_names, cat_values);
+
+  order_names = <%= raw @orderChart.legend_order_chart %>;
+  order_values = <%= @orderChart.total_order_chart %>;
+
+  var ctx = document.getElementById("chart-orders").getContext("2d");
+  generatePieChart(ctx, order_names, order_values);
+
+  revnue_names = <%= raw @revenueChart.legend_revenue_chart %>;
+  revnue_values = <%= @revenueChart.total_revenue_chart %>;
+  ctx = document.getElementById("canvas").getContext("2d");
+  generateBarChart(ctx, revnue_names, revnue_values);
+});
+</script>
