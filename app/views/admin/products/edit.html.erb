@@ -1,33 +1,34 @@
 <% provide :title, t("admin.products.update.title") %>
 <h4><%= t("admin.products.update.title") %></h4>
-
-<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading"><%= t ".title" %></div>
+  <div class="panel-body">
     <%= form_for [:admin, @product] do |f| %>
-      <div class="row">
+      <div class="row row-form">
         <div class="col-md-2">
           <%= f.label :name %>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :name %>
+          <%= f.text_field :name, class: "form-control"%>
         </div>
       </div>
-      <div class="row">
+      <div class="row row-form">
         <div class="col-md-2">
           <%= f.label :quantity %>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :qty %>
+          <%= f.text_field :qty, class: "form-control"%>
         </div>
       </div>
-      <div class="row">
+      <div class="row row-form">
         <div class="col-md-2">
           <%= f.label :tag %>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :tag %>
+          <%= f.text_field :tag, class: "form-control"%>
         </div>
       </div>
-      <div class="row">
+      <div class="row row-form">
         <div class="col-md-2">
           <%= f.label :catalog %>
         </div>
@@ -36,15 +37,15 @@
             {}, {class: "form-control"} %>
         </div>
       </div>
-      <div class="row">
+      <div class="row row-form">
         <div class="col-md-2">
           <%= f.label :content %>
         </div>
         <div class="col-md-8">
-          <%= f.text_area :content, id: "content_editor" %>
+          <%= f.text_area :content, id: "content_editor", class: "form-control"%>
         </div>
       </div>
-      <div class="row">
+      <div class="row row-form">
         <div class="col-md-12">
           <div id="images">
             <%= f.fields_for :images do |images_form| %>
@@ -53,7 +54,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row row-form">
         <div class="col-md-12">
           <div class="links">
             <%= link_to_add_association t("admin.products.create.add_image"), f, :images %>
@@ -62,4 +63,5 @@
       </div>
       <%= f.submit t("admin.products.update.save_change"), class: "btn btn-primary" %>
     <% end %>
+  </div>
 </div>

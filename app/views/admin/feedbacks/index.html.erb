@@ -1,0 +1,43 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= t ".title" %></div>
+    <div class="panel-body">
+    <%= search_form_for [:admin, @search] do |f| %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.text_field :title_cont,
+          placeholder: t("default.search"), class: "form-control" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.submit t("default.search"), class: "btn-primary form-control" %>
+        </div>
+      </div>
+    <% end %>
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>#</th>
+          <th><%= t(".name") %></th>
+          <th><%= t(".payment_info") %></th>
+          <th>#</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @feedbacks.each_with_index do |feedback, index| %>
+          <tr>
+            <td><%= show_index index %></td>
+            <td><%= feedback.title %></td>
+            <td><%= feedback.content %></td>
+            <td>
+              <%= link_to [:admin, feedback], metdod: :delete,
+                data: {confirm: t("default.you_sure")} do %>
+                <strong class="glyphicon glyphicon-trash"></strong>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

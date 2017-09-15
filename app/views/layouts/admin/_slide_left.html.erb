@@ -8,9 +8,10 @@
         <ul class="sidebar-menu">
           <li><hr/></li>
           <li>
-            <a href="#">
-            <i class="fa fa-th"></i> <span><%= t ".dashboard" %></span>
-            </a>
+            <%= link_to admin_statistics_path do %>
+              <i class="fa fa-th"></i>
+              <span><%= t(".dashboard") %></span>
+            <% end %>
           </li>
 
           <li class="treeview">
@@ -52,6 +53,28 @@
                 <%= link_to new_admin_catalog_path do %>
                   <i class="fa"></i>
                   <%= t "admin.menu.add_catalog" %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+
+          <li class="treeview">
+            <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span><%= t "admin.menu.products" %></span>
+            <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="">
+              <li>
+                <%= link_to admin_products_path do %>
+                  <i class="fa"></i>
+                  <%= t "admin.menu.products" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_admin_product_path do %>
+                  <i class="fa"></i>
+                  <%= t "admin.menu.add_product" %>
                 <% end %>
               </li>
             </ul>

@@ -6,7 +6,7 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.editor?
-      can :manage, [Product, Catalog, Feedback, StaticPage]
+      can :manage, [Admin::Product, Admin::Catalog, Admin::Feedback, Admin::StaticPage]
     else
       can :read, :all
     end

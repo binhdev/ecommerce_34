@@ -30,6 +30,7 @@ en:
     logout: "Logout"
     sign_up_now: "Sign up now!"
     account: "Account"
+    order_history: "Order History"
   admin:
     bar:
       title: "Admin Panel"
@@ -135,7 +136,16 @@ en:
         title: "Import products from file"
         import_button: "Import"
         import_success: "Import successfully!"
-
+    payments:
+      index:
+        title: "Payments"
+      new:
+        title: "Create new payment"
+      edit:
+        title: "Edit payment"
+    feedbacks:
+      index:
+        title: "Feedbacks"
     statistics:
       index:
         title: "Statistic Page"
@@ -302,3 +312,4 @@ en:
   pending: "Pending"
   waiting: "Waiting"
   accpeted: "Accepted"
+  add_cart: "Cart"
