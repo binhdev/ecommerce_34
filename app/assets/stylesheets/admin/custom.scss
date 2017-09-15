@@ -638,3 +638,24 @@ footer:before {
   height: 120px;
   min-height: 120px;
 }
+footer {
+  color: #333;
+  font-size: 11px;
+  text-align: center;
+  vertical-align: bottom;
+  border-top: 1px solid #eaeaea;
+  width: 100%;
+  height: 50px;
+  color: #777;
+}
+footer:before {
+    clear: both;
+    display: block;
+    height: 120px;
+    min-height: 120px;
+}
+
+/* Bar header */
+#bar-header{
+  background: #333333;
+}

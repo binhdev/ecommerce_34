@@ -135,6 +135,10 @@ en:
         title: "Import products from file"
         import_button: "Import"
         import_success: "Import successfully!"
+
+    statistics:
+      index:
+        title: "Statistic Page"
     menu:
       dashboard: "Dashboard"
       users: "Users"
@@ -293,3 +297,8 @@ en:
   sort_by_price: "Sort by price:"
   sort_by_name: "Sort by name:"
   sort_by_quantity: "Sort by quantity:"
+  update_profile: "Update profile"
+  change_password: "Change password"
+  pending: "Pending"
+  waiting: "Waiting"
+  accpeted: "Accepted"

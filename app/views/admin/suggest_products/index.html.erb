@@ -20,7 +20,7 @@
       </thead>
       <tbody>
         <% @suggest_products.each_with_index do |suggest_product, index|%>
-          <tr class="<%= set_class suggest_product %>" >
+          <tr class="<%= sp_set_class suggest_product %>" >
             <td scope="row"><%= show_index index %></td>
             <td><%= image_tag suggest_product.image, size: Settings.default.image_size,
               alt: suggest_product.name, class: "gravatar" %></td>
@@ -29,7 +29,7 @@
             <td><%= suggest_product.price %></td>
             <td><%= suggest_product.catalog.name %></td>
             <td><%= suggest_product.user.name %></td>
-            <td><%= show_status suggest_product %></td>
+            <td><%= sp_show_status suggest_product %></td>
             <td>
               <%= link_to edit_admin_suggest_product_path(suggest_product.id) do %>
                 <strong class="glyphicon glyphicon-pencil"></strong>

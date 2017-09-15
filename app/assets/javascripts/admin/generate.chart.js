@@ -11,7 +11,7 @@ function generatePieChart(ctx, names, values){
           window.chartColors.green,
           window.chartColors.blue,
         ],
-        label: 'Dataset 1'
+        label: 'Pie Chart'
       }],
       labels: names
     },
@@ -27,8 +27,14 @@ function generateBarChart(ctx, names, values){
   var barChartData = {
     labels: names,
     datasets: [{
-      label: 'Revnue last 7 days',
-      backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+      label: 'Revnue last 7 days - Currency: USD($)',
+      backgroundColor: [
+          window.chartColors.red,
+          window.chartColors.orange,
+          window.chartColors.yellow,
+          window.chartColors.green,
+          window.chartColors.blue,
+        ],
       borderColor: window.chartColors.red,
       borderWidth: 1,
       data: values
